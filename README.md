@@ -1,4 +1,4 @@
-<!-- # Getting Started with Create React App
+# Registration Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
- -->
+This project was created as an task during an Interview process.This was build using HTML, CSS, react and done validation without using any external library.
+
