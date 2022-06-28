@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  color: rgb(110, 107, 107);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  background: rgb(125, 212, 231);
+  background: linear-gradient(
+    156deg,
+    rgba(125, 212, 231, 1) 0%,
+    rgba(254, 254, 255, 1) 81%,
+    rgba(204, 209, 203, 1) 100%
+  );
+  font-family: Poppins, sans-serif;
+  display: flex;
+  overflow-x: hidden;
+  border-left: 7px solid white;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#logo {
+  width: 38px;
+  height: 38px;
+  margin: 5px 0 0 5px;
+  position: sticky;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 14px;
+}
+#rightContainer {
+  width: 70%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*right box adding */
+#rightBox {
+  background-image: url(./assets/rightboximage.svg);
+  background-size: 100% 100%;
+  width: 30%;
+  position: relative;
+  right: -5%;
+}
+
+/*right box end */
+
+.registrationForm {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 40px;
+  background-color: white;
+  padding: 26px;
+  border-radius: 5px;
+}
+
+.inputParent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.inputParent > input {
+  margin-top: 5px;
+  min-height: 30px;
+  font-size: 0.8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputParent > label {
+  font-weight: 600;
+}
+
+#message {
+  margin-top: 10px;
+  min-height: 60px;
+}
+#countryInput {
+  margin-top: 10px;
+  min-height: 40px;
+  width: 100%;
+}
+
+.inputParent > input:focus {
+  outline: 2px solid #7dd4e7;
+  border: none;
+}
+
+#message:focus {
+  outline: 2px solid #7dd4e7;
+  border: none;
+}
+
+#submitButton {
+  background-color: gray;
+  width: 100px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  margin: 10px 0 0 5px;
+  font-weight: 700;
 }
