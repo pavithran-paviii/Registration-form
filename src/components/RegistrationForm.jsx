@@ -1,56 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import CountryInput from "./CountryInput";
+import { inputFieldData } from "../data/inputFieldsData";
+import InputFields from "./InputFields";
 
 const RegistrationForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    country: "India",
+    city: "",
+    state: "",
+    message: "",
+  });
+
+  const setData = (event) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("working");
+    console.log(formData);
+  };
+
   return (
     <div id="rightContainer">
       <div className="registrationForm">
         <h2 style={{ marginBottom: "10px" }}>Registration Form</h2>
-        <div
-          style={{
-            width: "60px",
-            height: "2px",
-            backgroundColor: "#7dd4e7",
-            marginBottom: "10px",
-          }}
-        ></div>
-        <form>
+        <div></div>
+        <form onSubmit={handleSubmit}>
+          {inputFieldData.map((inputs) => {
+            if (inputs.label === "Country") {
+              return (
+                <div className="inputParent" key="country">
+                  <label htmlFor="country">Country</label>
+                  <CountryInput
+                    id="country"
+                    onchange={setData}
+                    value={formData[inputs.id]}
+                  />
+                </div>
+              );
+            }
+
+            return (
+              <InputFields
+                inputs={inputs}
+                key={inputs.id}
+                onchange={setData}
+                value={formData[inputs.id]}
+              />
+            );
+          })}
+
           <div className="inputParent">
-            <label for="username">Name</label>
-            <input
-              type="text"
-              placeholder="Enter your name"
-              id="username"
-              required
-            />
-          </div>
-          <div className="inputParent">
-            <label for="email">Email</label>
-            <input type="email" placeholder="Enter your email" id="email" />
-          </div>
-          <div className="inputParent">
-            <label for="mobile">Mobile</label>
-            <input
-              type="tel"
-              placeholder="Enter your mobile number"
-              id="mobile"
-            />
-          </div>
-          <div className="inputParent">
-            <label for="country">Country</label>
-            <CountryInput id="country" />
-          </div>
-          <div className="inputParent">
-            <label for="city">City</label>
-            <input type="text" placeholder="Enter your City" id="city" />
-          </div>
-          <div className="inputParent">
-            <label for="state">State</label>
-            <input type="text" placeholder="Enter your State" id="state" />
-          </div>
-          <div className="inputParent">
-            <label for="message">Message</label>
-            <textarea placeholder="Enter your message" id="message"></textarea>
+            <label htmlFor="message">Message</label>
+            <textarea
+              placeholder="Enter your message"
+              id="message"
+              onChange={setData}
+            ></textarea>
           </div>
           <button id="submitButton">Submit</button>
         </form>

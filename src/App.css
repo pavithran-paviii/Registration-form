@@ -31,9 +31,9 @@ body {
 }
 #rightContainer {
   width: 70%;
+  margin-left: 15px;
 }
 
-/*right box adding */
 #rightBox {
   background-image: url(./assets/rightboximage.svg);
   background-size: 100% 100%;
@@ -41,8 +41,6 @@ body {
   position: relative;
   right: -5%;
 }
-
-/*right box end */
 
 .registrationForm {
   max-width: 600px;
@@ -53,6 +51,12 @@ body {
   border-radius: 5px;
 }
 
+.registrationForm > div:nth-child(2) {
+  width: 60px;
+  height: 2px;
+  background-color: #7dd4e7;
+  margin-bottom: 10px;
+}
 .inputParent {
   display: flex;
   flex-direction: column;
@@ -73,7 +77,7 @@ body {
   margin-top: 10px;
   min-height: 60px;
 }
-#countryInput {
+#country {
   margin-top: 10px;
   min-height: 40px;
   width: 100%;
@@ -90,7 +94,8 @@ body {
 }
 
 #submitButton {
-  background-color: gray;
+  background-color: #7dd4e7;
+  color: white;
   width: 100px;
   height: 40px;
   outline: none;
