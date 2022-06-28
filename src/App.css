@@ -30,14 +30,14 @@ body {
   padding: 14px;
 }
 #rightContainer {
-  width: 70%;
+  width: 65%;
   margin-left: 15px;
 }
 
 #rightBox {
   background-image: url(./assets/rightboximage.svg);
   background-size: 100% 100%;
-  width: 30%;
+  width: 35%;
   position: relative;
   right: -5%;
 }
@@ -93,6 +93,16 @@ body {
   border: none;
 }
 
+.errorMessage {
+  margin-top: 5px;
+  color: red;
+  font-size: 15px;
+  display: none;
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
 #submitButton {
   background-color: #7dd4e7;
   color: white;
@@ -103,4 +113,18 @@ body {
   border-radius: 2px;
   margin: 10px 0 0 5px;
   font-weight: 700;
+}
+
+@media (max-width: 750px) {
+  #rightBox {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #logo {
+    position: relative;
+  }
 }
